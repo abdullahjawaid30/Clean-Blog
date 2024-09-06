@@ -20,21 +20,21 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
 
                     <!--todo: Fetch Using For loop-->
-
-                    <!-- Post preview-->
+                    {% for post in posts %}
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+                        <a href="{{ url_for('post', post_slug=post.slug) }}">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <h3 class="post-subtitle">{{ post.tagline }}</h3>
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 24, 2023
+                            <a href="#!">Author</a>
+                            on {{ post.date }}
                         </p>
+                        <p>{{ post.content[0:145] }}...</p>
                     </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
+                    <hr>
+                    {% endfor %}
                     
                     <!-- Pager-->
                     <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#">Older Posts →</a></div>
@@ -42,5 +42,4 @@
             </div>
         </div>
 
-{% endblock %}
-       
+        {% endblock %}
