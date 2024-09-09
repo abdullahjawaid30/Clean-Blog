@@ -7,7 +7,9 @@
         "tw_url": "https://twitter.com/codingthunder",
         "gh_url": "https://github.com/codingthunder",
         "about_text": "Hi my name is jonson and I am learning backend and I am a good boy.",
-        "no_of_Posts":5
-
+        "no_of_Posts": 5,
+        "admin_user": "abdullah",
+        "admin_password": "hello",
+        "upload_location": "C:\\Users\\RT Solutions\\Desktop\\Flask\\Blog Website\\static"
     }
 }

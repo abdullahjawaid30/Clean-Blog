@@ -1,42 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card {
+      width: 360px; /* Reduced card width */
+    }
+    .form-control {
+      height: 45px; /* Adjust input field height */
+      padding: 10px; /* Adjust padding */
+    }
+    .btn-primary {
+      height: 45px; /* Adjust button height */
+      padding: 10px; /* Adjust padding */
+    }
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full viewport height */
+    }
+  </style>
+</head>
+<body>
+<div class="container center-div">
+  <div class="card">
+    <div class="card-header text-center">
+      <h3>Admin Login</h3>
+    </div>
+    <div class="card-body">
+      <form action="/dashboard" method="POST">
+        <div class="mb-3">
+          <label for="uname" class="form-label">User Name</label>
+          <input type="text" class="form-control" id="uname" name="uname" placeholder="User Name">
+        </div>
+        <div class="mb-3">
+          <label for="pass" class="form-label">Password</label>
+          <input type="pass" class="form-control" id="pass" name="pass" placeholder="Enter your password">
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary text-uppercase">Login in</button>
+        </div>
+      </form>
+    </div>
+    <div class="card-footer text-center">
+      <small class="text-muted">Don't have an account? <a href="#">Sign up</a></small>
+    </div>
+  </div>
+</div>
 
-    <title>Signin Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-
-  <body class="text-center">
-
- <link href="{{url_for('static', filename='css/signin.css')}}" rel="stylesheet">
- 
-    <form class="form-signin" action="/dashboard" method="post">
-      {% comment %} {% set fname = 'img/'+  params['login_image']  %} {% endcomment %}
-      <img class="mb-4" src="{{url_for('static', filename=fname)}}" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      {% comment %} <p class="mt-5 mb-3 text-muted">© {{params['blog_name'] }} 2017-2018</p> {% endcomment %}
-    </form>
-
-
- </body>
+<!-- Bootstrap JS (optional, for interactive components like dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
+
+
