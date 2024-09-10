@@ -146,7 +146,7 @@
             <td>{{post.date}}</td>
             <td class="text-center">
                 <a href="/edit/{{post.sno}}"><button class="btn btn-primary btn-custom">Edit</button></a>
-                <button class="btn btn-danger btn-custom">Delete</button>
+                <a href="/delete/{{post.sno}}"><button class="btn btn-danger btn-custom">Delete</button></a>
             </td>
           </tr>
         {% endfor %}
